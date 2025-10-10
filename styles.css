@@ -584,13 +584,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-white);
-    padding: 40px;
-    border-radius: 20px;
-}
-
-.service-section:nth-child(even) .service-visual {
-    background: var(--bg-white);
+    padding: 20px;
 }
 
 .service-illustration {
