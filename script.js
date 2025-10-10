@@ -6,16 +6,18 @@ const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.querySelector('.nav-links');
 
 // Mobile menu toggle
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-});
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('active');
+        if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
     });
 });
 
@@ -33,119 +35,43 @@ window.addEventListener('scroll', () => {
 // ===========================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
 
 // ===========================
-// Testimonial Slideshow
+// Continuous Auto-Scrolling Testimonials
 // ===========================
-class TestimonialSlideshow {
-    constructor() {
-        this.slides = document.querySelectorAll('.testimonial-slide');
-        this.prevBtn = document.getElementById('prevBtn');
-        this.nextBtn = document.getElementById('nextBtn');
-        this.indicatorsContainer = document.getElementById('indicators');
-        this.currentSlide = 0;
-        this.autoPlayInterval = null;
-        
-        if (this.slides.length > 0) {
-            this.init();
-        }
-    }
+function initTestimonialCarousel() {
+    const track = document.getElementById('testimonialTrack');
+    if (!track) return;
 
-    init() {
-        // Create indicators
-        this.createIndicators();
-        
-        // Add event listeners
-        if (this.prevBtn) {
-            this.prevBtn.addEventListener('click', () => this.previousSlide());
-        }
-        if (this.nextBtn) {
-            this.nextBtn.addEventListener('click', () => this.nextSlide());
-        }
-        
-        // Start autoplay
-        this.startAutoPlay();
-        
-        // Pause on hover
-        const slideshow = document.querySelector('.testimonial-slideshow');
-        if (slideshow) {
-            slideshow.addEventListener('mouseenter', () => this.stopAutoPlay());
-            slideshow.addEventListener('mouseleave', () => this.startAutoPlay());
-        }
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.previousSlide();
-            if (e.key === 'ArrowRight') this.nextSlide();
-        });
-    }
-
-    createIndicators() {
-        if (!this.indicatorsContainer) return;
-        
-        this.slides.forEach((_, index) => {
-            const indicator = document.createElement('div');
-            indicator.classList.add('indicator');
-            if (index === 0) indicator.classList.add('active');
-            indicator.addEventListener('click', () => this.goToSlide(index));
-            this.indicatorsContainer.appendChild(indicator);
-        });
-        this.indicators = document.querySelectorAll('.indicator');
-    }
-
-    goToSlide(index) {
-        // Remove active class from current slide
-        this.slides[this.currentSlide].classList.remove('active');
-        if (this.indicators[this.currentSlide]) {
-            this.indicators[this.currentSlide].classList.remove('active');
-        }
-        
-        // Update current slide index
-        this.currentSlide = index;
-        
-        // Add active class to new slide
-        this.slides[this.currentSlide].classList.add('active');
-        if (this.indicators[this.currentSlide]) {
-            this.indicators[this.currentSlide].classList.add('active');
-        }
-    }
-
-    nextSlide() {
-        const nextIndex = (this.currentSlide + 1) % this.slides.length;
-        this.goToSlide(nextIndex);
-    }
-
-    previousSlide() {
-        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-        this.goToSlide(prevIndex);
-    }
-
-    startAutoPlay() {
-        this.autoPlayInterval = setInterval(() => this.nextSlide(), 6000);
-    }
-
-    stopAutoPlay() {
-        if (this.autoPlayInterval) {
-            clearInterval(this.autoPlayInterval);
-            this.autoPlayInterval = null;
-        }
-    }
+    const slides = Array.from(track.children);
+    
+    // Duplicate all slides to create seamless infinite loop
+    slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        track.appendChild(clone);
+    });
+    
+    // CSS animation handles the scrolling automatically
+    // No additional JavaScript needed for the scroll effect
 }
 
-// Initialize slideshow when DOM is loaded
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-    new TestimonialSlideshow();
+    initTestimonialCarousel();
 });
 
 // ===========================
@@ -192,7 +118,7 @@ function animateCounter(element, target, suffix = '', duration = 2000) {
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-            const statNumber = entry.target.querySelector('.stat-number-inline');
+            const statNumber = entry.target.querySelector('.stat-number-inline, .stat-value');
             if (statNumber) {
                 const targetText = statNumber.textContent;
                 let suffix = '';
@@ -208,6 +134,9 @@ const statsObserver = new IntersectionObserver((entries) => {
                 } else if (targetText.includes('%')) {
                     suffix = '%';
                     targetNumber = parseInt(targetText.replace(/\D/g, ''));
+                } else if (targetText.includes('s')) {
+                    suffix = 's';
+                    targetNumber = parseFloat(targetText.replace(/[^0-9.]/g, ''));
                 } else {
                     targetNumber = parseInt(targetText.replace(/\D/g, ''));
                 }
@@ -221,7 +150,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-inline').forEach(stat => {
+document.querySelectorAll('.stat-inline, .stat-card').forEach(stat => {
     statsObserver.observe(stat);
 });
 
@@ -260,24 +189,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-// ===========================
-// Performance: Debounce Scroll Events
-// ===========================
-function debounce(func, wait = 10, immediate = true) {
-    let timeout;
-    return function() {
-        const context = this, args = arguments;
-        const later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        const callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-}
 
 // ===========================
 // Console Message
