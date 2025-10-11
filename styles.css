@@ -254,6 +254,7 @@ body {
     align-items: center;
     background: linear-gradient(135deg, #0a1628 0%, #001529 100%);
     padding-top: 100px;
+    padding-bottom: 120px;
     overflow: hidden;
 }
 
@@ -424,6 +425,61 @@ body {
 
 .hero-wave path {
     fill: var(--bg-white);
+}
+
+/* ===========================
+   Trusted By / Tools Section
+   =========================== */
+.trusted-by-section {
+    padding: 80px 0;
+    background: var(--bg-white);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.trusted-by-content {
+    text-align: center;
+}
+
+.trusted-by-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tool-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: var(--transition-smooth);
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+.tool-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.tool-logo img {
+    max-width: 120px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 /* ===========================
