@@ -673,18 +673,27 @@ body {
 }
 
 .service-content-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 80px;
     align-items: center;
 }
 
-.service-content-layout.reverse {
-    direction: rtl;
+.service-content-layout .service-text {
+    flex: 1;
+    order: 1;
 }
 
-.service-content-layout.reverse > * {
-    direction: ltr;
+.service-content-layout .service-visual {
+    flex: 1;
+    order: 2;
+}
+
+.service-content-layout.reverse .service-text {
+    order: 2;
+}
+
+.service-content-layout.reverse .service-visual {
+    order: 1;
 }
 
 .service-text {
