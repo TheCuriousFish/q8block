@@ -1,0 +1,41 @@
+Q8Block Company Information (Extracted from Official Certificate)
+==================================================================
+
+Company Name (Arabic): شركة كويت بلوك لتصميم وتجهيز مراكز الحاسبات الالكترونية
+Company Name (English): Kuwait Block for Design and Setup of Electronic Computer Centers
+Trade Name: Q8Block
+
+Legal Entity: Limited Liability Company (شركة ذات مسؤولية محدودة)
+Capital: 100,000 KWD
+
+License Number: 2022/6454
+Commercial Registration: 460497
+Central Number: 2012202210777
+Civil ID Number: 5113971
+
+Business Activities:
+1. Design and setup of electronic computer centers (620210)
+2. Website design - Web (631201)
+
+Address:
+- Governorate: Ahmadi (الأحمدي)
+- Area: Mangaf (المنقف)
+- Block: 004
+- Street: Street 14 (شارع 14)
+- Building: Nasser Faleh Shanan Al-Subaie (ناصر فالح شنان السبيعي)
+- Floor: 1
+- Unit Type: Shop (محل)
+- Unit Number: 9
+- Postal Code: 54130
+- Address Code: 15880776
+
+Contact: 94139666
+Location: Kuwait
+
+Color Guidelines (from existing CSS):
+- Primary Navy: #001f3f
+- Primary Dark: #001529
+- Accent Cyan: #00d9ff
+- Accent Purple: #7b2cbf
+- Text White: #ffffff
+- Background Dark: #001529

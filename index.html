@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Q8Block - Search Marketing Experts in Kuwait. We help businesses become discoverable online, turning search traffic into loyal customers through expert SEO, Google Ads, and Web Development.">
-    <title>Q8Block | Turn Your Online Invisibility Into Market Leadership</title>
+    <meta name="description" content="Q8Block - Online Presence That Actually Pays Off. We build strong digital presence that attracts ready-to-buy customers and turns attention into revenue in Kuwait.">
+    <title>Q8Block | Online Presence That Actually Pays Off</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="#" class="logo">
-                    <span class="logo-text">Q8Block</span>
+                    <span class="logo-text">Q8<span class="logo-highlight">Block</span></span>
                 </a>
-                <div class="nav-links">
+                <div class="nav-links" id="navLinks">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#services" class="nav-link">Services</a>
-                    <a href="#testimonials" class="nav-link">Results</a>
+                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#results" class="nav-link">Results</a>
                     <a href="#contact" class="btn-primary-nav">Get Started</a>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -33,240 +37,259 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Desklyfe Style) -->
+    <!-- Section 1: Hero -->
     <section class="hero" id="home">
-        <div class="hero-bg"></div>
+        <div class="hero-glow"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text fade-in">
-                    <div class="hero-subtitle-badge">SEARCH MARKETING EXPERTS IN KUWAIT</div>
-                    <h1 class="hero-title">Your Customers Can't Find You Online. <span class="hero-title-highlight">We Fix That.</span></h1>
-                    <p class="hero-description">Every day, potential customers search for what you offer. They're ready to buy. But they find your competitors instead. We make sure you're the first business they see, the first they call, and the first they choose.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn-primary btn-large">Start Your Project →</a>
-                        <a href="#testimonials" class="btn-secondary btn-large">View Our Work</a>
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Digital Marketing Experts in Kuwait
+                    </div>
+                    <h1 class="hero-title">
+                        Online Presence That <span class="gradient-text">Actually Pays Off</span>
+                    </h1>
+                    <p class="hero-description">
+                        Most businesses look online. Few generate real leads. We focus on one thing only: building a strong digital presence that attracts ready-to-buy customers and turns attention into revenue, not vanity metrics.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary btn-glow">
+                            Start Your Project
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="#services" class="btn-secondary">
+                            Explore Services
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="300">0</span><span class="stat-suffix">%</span>
+                            <span class="stat-label">Avg. Traffic Growth</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="5">0</span><span class="stat-suffix">★</span>
+                            <span class="stat-label">Client Rating</span>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-stats-floating fade-in-delayed">
-                    <div class="stat-card stat-card-1">
-                        <div class="stat-icon">📈</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Traffic Growth</div>
-                            <div class="stat-value">+245%</div>
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <img src="images/hero-illustration.png" alt="Digital Marketing Success" class="hero-image">
+                        <div class="floating-card card-1">
+                            <div class="card-icon">📈</div>
+                            <div class="card-content">
+                                <span class="card-label">Traffic</span>
+                                <span class="card-value">+245%</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="stat-card stat-card-2">
-                        <div class="stat-icon">🎯</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Conversion Rate</div>
-                            <div class="stat-value">8.4%</div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-content">
+                                <span class="card-label">Conversions</span>
+                                <span class="card-value">8.4%</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="stat-card stat-card-3">
-                        <div class="stat-icon">⚡</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Page Speed</div>
-                            <div class="stat-value">0.8s</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0 C150,100 350,0 600,50 C850,100 1050,0 1200,50 L1200,120 L0,120 Z"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- Trusted By / Tools Section -->
-    <section class="trusted-by-section">
-        <div class="container">
-            <div class="trusted-by-content">
-                <p class="trusted-by-label">POWERED BY INDUSTRY-LEADING TOOLS</p>
-                <div class="tools-grid">
-                    <div class="tool-logo">
-                        <img src="logos/google-ads.svg" alt="Google Ads" />
-                    </div>
-                    <div class="tool-logo">
-                        <img src="logos/semrush.svg" alt="SEMrush" />
-                    </div>
-                    <div class="tool-logo">
-                        <img src="logos/ahrefs.svg" alt="Ahrefs" />
-                    </div>
-                    <div class="tool-logo">
-                        <img src="logos/google-analytics.svg" alt="Google Analytics" />
-                    </div>
-                    <div class="tool-logo">
-                        <img src="logos/google-search-console.svg" alt="Google Search Console" />
-                    </div>
-                    <div class="tool-logo">
-                        <img src="logos/screaming-frog.svg" alt="Screaming Frog" />
                     </div>
                 </div>
             </div>
         </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem-section">
+    <!-- Section 2: Problem -->
+    <section class="problem-section" id="problem">
         <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Challenge</span>
+                <h2 class="section-title">Why Most Businesses <span class="gradient-text">Struggle Online</span></h2>
+                <p class="section-subtitle">Your competitors are capturing the customers who should be finding you</p>
+            </div>
             <div class="problem-content">
-                <h2 class="section-title-dark">The Hidden Cost of Being Invisible</h2>
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <div class="problem-number">1</div>
-                        <h3>Lost Opportunities</h3>
-                        <p>When customers search for your services, they see your competitors first. Page 2 and beyond might as well not exist. Each missed search is a customer you'll never reach, an opportunity that slips away to someone else who invested in being found.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-number">2</div>
-                        <h3>Inefficient Marketing Spend</h3>
-                        <p>You're investing in advertising, but the returns aren't there. Clicks without conversions. Traffic without sales. Your budget is working harder than it should because the strategy isn't aligned with how customers actually make decisions online.</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-number">3</div>
-                        <h3>Outdated Digital Presence</h3>
-                        <p>Your website loads slowly, looks dated, or doesn't work well on mobile. Potential customers leave before they even see what you offer. In today's market, a weak digital presence actively pushes business away instead of attracting it.</p>
-                    </div>
+                <div class="problem-image">
+                    <img src="images/problem-illustration.png" alt="Business Invisibility Problem">
                 </div>
-                <div class="problem-cta">
-                    <p class="problem-statement">These challenges compound over time. But there's a clear path forward.</p>
+                <div class="problem-cards">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                                <path d="M11 8v6M8 11h6"></path>
+                            </svg>
+                        </div>
+                        <h3>Invisible to Customers</h3>
+                        <p>When people search for your services, they find your competitors first. Page 2 of Google might as well not exist.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Wasted Ad Spend</h3>
+                        <p>Clicks without conversions. Traffic without sales. Your marketing budget is working harder than it should.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M8 21h8M12 17v4"></path>
+                            </svg>
+                        </div>
+                        <h3>Outdated Presence</h3>
+                        <p>Slow websites, poor mobile experience, and dated designs actively push potential customers away.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="solution-section">
+    <!-- Section 3: Services -->
+    <section class="services-section" id="services">
         <div class="container">
-            <div class="solution-content">
-                <p class="section-subtitle">THE SOLUTION</p>
-                <h2 class="section-title-dark">Strategic Search Marketing That Puts You First</h2>
-                <p class="solution-description">The answer isn't more advertising spend or flashy gimmicks. It's a proven, systematic approach to search marketing that makes your business the obvious choice when customers are actively looking for what you offer. We combine four essential pillars to transform your online presence from invisible to indispensable.</p>
-                
-                <div class="solution-pillars">
-                    <div class="pillar-card">
-                        <div class="pillar-number">01</div>
-                        <h3>Professional Web Presence</h3>
-                        <p>A fast, modern website that works flawlessly on every device and turns visitors into customers from the first click.</p>
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">Everything You Need to <span class="gradient-text">Dominate Online</span></h2>
+                <p class="section-subtitle">Four pillars of digital success, tailored for Kuwait businesses</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/services-web.png" alt="Web Development">
                     </div>
-                    <div class="pillar-card">
-                        <div class="pillar-number">02</div>
-                        <h3>Search Engine Dominance</h3>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M8 21h8M12 17v4"></path>
+                            </svg>
+                        </div>
+                        <h3>Website Design & Development</h3>
+                        <p>Fast, modern websites that work flawlessly on every device and turn visitors into customers from the first click.</p>
+                        <ul class="service-features">
+                            <li>Lightning-fast load times</li>
+                            <li>Mobile-first responsive design</li>
+                            <li>Conversion-optimized layouts</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/services-seo.png" alt="SEO Services">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </div>
+                        <h3>Search Engine Optimization</h3>
                         <p>Strategic SEO that secures top rankings for the exact searches your ideal customers are making right now.</p>
-                    </div>
-                    <div class="pillar-card">
-                        <div class="pillar-number">03</div>
-                        <h3>Profitable Advertising</h3>
-                        <p>Google Ads campaigns optimized for maximum return, bringing qualified leads at a sustainable cost.</p>
-                    </div>
-                    <div class="pillar-card">
-                        <div class="pillar-number">04</div>
-                        <h3>Local Market Leadership</h3>
-                        <p>Google Business optimization that captures high-intent local customers searching "near me" on their phones.</p>
+                        <ul class="service-features">
+                            <li>Keyword research & strategy</li>
+                            <li>On-page & technical SEO</li>
+                            <li>Content optimization</li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="solution-cta">
-                    <p>Each pillar works independently. Together, they create an unstoppable growth system.</p>
-                    <a href="#services" class="btn-primary btn-large">Explore Our Services</a>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/services-ads.png" alt="Google Ads">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3>Google Ads Management</h3>
+                        <p>Campaigns optimized for maximum return, bringing qualified leads at a sustainable cost per acquisition.</p>
+                        <ul class="service-features">
+                            <li>Strategic campaign setup</li>
+                            <li>A/B testing & optimization</li>
+                            <li>ROI-focused management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/services-gmb.png" alt="Google Business Profile">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Google Business Profile</h3>
+                        <p>Capture high-intent local customers searching "near me" on their phones and dominate local search results.</p>
+                        <ul class="service-features">
+                            <li>Profile optimization</li>
+                            <li>Review management</li>
+                            <li>Local SEO integration</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Website Design Section (Content Left, Image Right) -->
-    <section class="service-section web-design-section" id="web-design">
+    <!-- Section 4: Process -->
+    <section class="process-section" id="process">
         <div class="container">
-            <div class="service-content-layout">
-                <div class="service-text">
-                    <p class="section-subtitle">WEBSITE DESIGN & DEVELOPMENT</p>
-                    <h2 class="section-title-dark">Your Website Should Work as Hard as You Do</h2>
-                    <p class="service-intro">A website isn't just a digital brochure. It's your most powerful sales tool, working around the clock to attract, engage, and convert customers. We build websites that load instantly, look professional, and guide visitors toward taking action—whether that's making a purchase, booking a consultation, or getting in touch.</p>
-                    
-                    <div class="benefit-list">
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Lightning-Fast Performance:</strong> Optimized for speed to keep visitors engaged and improve search rankings.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Mobile-First Design:</strong> Seamless experience across all devices, from smartphones to desktops.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Conversion-Focused:</strong> Every element designed to guide visitors toward becoming customers.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Secure & Reliable:</strong> Built with best practices to protect your business and your customers.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-visual">
-                    <img src="illustration_website.png" alt="Website Design Illustration" class="service-illustration">
-                </div>
+            <div class="section-header">
+                <span class="section-tag">How We Work</span>
+                <h2 class="section-title">A Proven Process for <span class="gradient-text">Real Results</span></h2>
+                <p class="section-subtitle">From discovery to delivery, we follow a systematic approach</p>
             </div>
-        </div>
-    </section>
-
-    <!-- SEO Section (Content Right, Image Left) -->
-    <section class="service-section seo-section" id="seo">
-        <div class="container">
-            <div class="service-content-layout reverse">
-                <div class="service-visual">
-                    <img src="illustration_seo.png" alt="SEO Illustration" class="service-illustration">
+            <div class="process-content">
+                <div class="process-image">
+                    <img src="images/process-illustration.png" alt="Our Process">
                 </div>
-                <div class="service-text">
-                    <p class="section-subtitle">SEARCH ENGINE OPTIMIZATION</p>
-                    <h2 class="section-title-dark">Be Found by Customers Who Are Ready to Buy</h2>
-                    <p class="service-intro">When someone searches for your services, where do you appear? If you're not on the first page, you're practically invisible. Our SEO strategies are designed to secure top rankings for the keywords that drive real business results. We focus on sustainable, white-hat techniques that build lasting visibility and authority in your market.</p>
-                    
-                    <div class="benefit-list">
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Keyword Strategy:</strong> Target the exact searches your ideal customers are making.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Technical Excellence:</strong> Optimize site structure, speed, and performance for search engines.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Content Optimization:</strong> Create and refine content that ranks well and engages readers.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>AI Search Ready:</strong> Positioned for visibility in emerging AI-powered search platforms.</span>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Discovery</h3>
+                            <p>We analyze your business, competitors, and target audience to understand exactly what success looks like for you.</p>
                         </div>
                     </div>
-
-                    <div class="proof-box">
-                        <div class="proof-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Strategy</h3>
+                            <p>We develop a customized roadmap with clear milestones, timelines, and measurable objectives.</p>
                         </div>
-                        <div class="proof-text">
-                            <strong>Proven Results:</strong> Our clients typically see top-3 rankings within 60-90 days, with sustained traffic growth over time.
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Execution</h3>
+                            <p>Our team implements the strategy with precision, keeping you informed at every step of the journey.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Results</h3>
+                            <p>We track, measure, and optimize continuously to ensure your investment delivers maximum returns.</p>
                         </div>
                     </div>
                 </div>
@@ -274,97 +297,178 @@
         </div>
     </section>
 
-    <!-- Google Ads Section (Content Left, Image Right) -->
-    <section class="service-section google-ads-section" id="google-ads">
+    <!-- Section 5: Results -->
+    <section class="results-section" id="results">
         <div class="container">
-            <div class="service-content-layout">
-                <div class="service-text">
-                    <p class="section-subtitle">GOOGLE ADS MANAGEMENT</p>
-                    <h2 class="section-title-dark">Turn Your Ad Spend Into Predictable Growth</h2>
-                    <p class="service-intro">Google Ads can be incredibly powerful—or incredibly wasteful. The difference lies in strategy, execution, and continuous optimization. We manage campaigns that consistently deliver qualified leads and measurable returns, ensuring your advertising budget works efficiently to grow your business.</p>
-                    
-                    <div class="benefit-list">
-                        <div class="benefit-item">
+            <div class="section-header">
+                <span class="section-tag">Proven Results</span>
+                <h2 class="section-title">Numbers That <span class="gradient-text">Speak for Themselves</span></h2>
+                <p class="section-subtitle">Real metrics from real clients who trusted us with their growth</p>
+            </div>
+            <div class="results-content">
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <div class="result-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
+                                <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
+                                <path d="M17 6h6v6"></path>
                             </svg>
-                            <span><strong>Strategic Targeting:</strong> Reach the right audience at the right time with precision.</span>
                         </div>
-                        <div class="benefit-item">
+                        <div class="result-number" data-count="300">0</div>
+                        <div class="result-suffix">%</div>
+                        <div class="result-label">Average Traffic Increase</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
-                            <span><strong>Conversion Optimization:</strong> Continuously refine campaigns to maximize results.</span>
                         </div>
-                        <div class="benefit-item">
+                        <div class="result-number" data-count="5">0</div>
+                        <div class="result-suffix">x</div>
+                        <div class="result-label">Return on Ad Spend</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
                             </svg>
-                            <span><strong>Transparent Reporting:</strong> Clear insights into performance and return on investment.</span>
                         </div>
-                        <div class="benefit-item">
+                        <div class="result-number" data-count="30">0</div>
+                        <div class="result-suffix">days</div>
+                        <div class="result-label">Avg. Time to First Results</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="result-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
-                            <span><strong>Scalable Campaigns:</strong> Grow your ad spend confidently as results improve.</span>
+                        </div>
+                        <div class="result-number" data-count="98">0</div>
+                        <div class="result-suffix">%</div>
+                        <div class="result-label">Client Satisfaction Rate</div>
+                    </div>
+                </div>
+                <div class="results-image">
+                    <img src="images/results-stats.png" alt="Impressive Results">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Why Choose Us -->
+    <section class="why-section" id="why">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Q8Block</span>
+                <h2 class="section-title">What Makes Us <span class="gradient-text">Different</span></h2>
+                <p class="section-subtitle">We're not just another agency. We're your growth partner.</p>
+            </div>
+            <div class="why-content">
+                <div class="why-image">
+                    <img src="images/why-choose-us.png" alt="Why Choose Q8Block">
+                </div>
+                <div class="why-features">
+                    <div class="why-feature">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Kuwait-Based Expertise</h3>
+                            <p>We understand the local market, culture, and what it takes to succeed in the Gulf region.</p>
                         </div>
                     </div>
-
-                    <div class="guarantee-box">
-                        <div class="guarantee-icon">
+                    <div class="why-feature">
+                        <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                <path d="M9 12l2 2 4-4"></path>
                             </svg>
                         </div>
-                        <div class="guarantee-text">
-                            <strong>Our Commitment:</strong> We focus on profitability from day one. If your campaigns aren't delivering meaningful results within 90 days, we'll refund our management fees.
+                        <div class="feature-content">
+                            <h3>Results Guaranteed</h3>
+                            <p>We're confident in our work. If we don't deliver results, you don't pay. Simple as that.</p>
                         </div>
                     </div>
-                </div>
-                <div class="service-visual">
-                    <img src="illustration_google_ads.png" alt="Google Ads Illustration" class="service-illustration">
+                    <div class="why-feature">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Full-Service Solution</h3>
+                            <p>From web development to SEO to ads, everything under one roof for seamless execution.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Fast Turnaround</h3>
+                            <p>We respect your time. Quick delivery without compromising on quality or attention to detail.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Google Business Section (Content Right, Image Left) -->
-    <section class="service-section google-business-section" id="google-business">
+    <!-- Section 7: Testimonials -->
+    <section class="testimonials-section" id="testimonials">
         <div class="container">
-            <div class="service-content-layout reverse">
-                <div class="service-visual">
-                    <img src="illustration_google_business.png" alt="Google Business Illustration" class="service-illustration">
+            <div class="section-header">
+                <span class="section-tag">Client Stories</span>
+                <h2 class="section-title">Trusted by <span class="gradient-text">Growing Businesses</span></h2>
+                <p class="section-subtitle">Don't just take our word for it</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"Q8Block transformed our online presence completely. Within 3 months, our website traffic increased by 400% and we're getting quality leads every single day."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AK</div>
+                        <div class="author-info">
+                            <span class="author-name">Ahmed K.</span>
+                            <span class="author-role">Restaurant Owner, Kuwait City</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-text">
-                    <p class="section-subtitle">GOOGLE BUSINESS PROFILE</p>
-                    <h2 class="section-title-dark">Capture High-Intent Local Customers</h2>
-                    <p class="service-intro">When someone searches for a business "near me," they're ready to take action—often within hours. Your Google Business Profile is your storefront in local search results. We optimize it to ensure you appear prominently, showcase your best qualities, and make it easy for customers to choose you over competitors.</p>
-                    
-                    <div class="benefit-list">
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Profile Optimization:</strong> Complete, accurate, and compelling business information.</span>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"The best investment we've made for our business. Professional team, clear communication, and most importantly - real results. Our Google Ads ROI went from 2x to 7x."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <span class="author-name">Sara M.</span>
+                            <span class="author-role">E-commerce Business Owner</span>
                         </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Review Management:</strong> Build a strong reputation with authentic, positive reviews.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Local SEO:</strong> Rank higher in "near me" and location-based searches.</span>
-                        </div>
-                        <div class="benefit-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span><strong>Engagement Tracking:</strong> Monitor calls, directions, and website visits from your profile.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-text">"Finally, a digital agency that delivers what they promise. Our Google Business profile now ranks #1 for our main keywords. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <span class="author-name">Mohammed R.</span>
+                            <span class="author-role">Auto Service Center Owner</span>
                         </div>
                     </div>
                 </div>
@@ -372,228 +476,89 @@
         </div>
     </section>
 
-    <!-- Services Summary Section -->
-    <section class="services-summary-section" id="services">
+    <!-- Section 8: Contact -->
+    <section class="contact-section" id="contact">
         <div class="container">
-            <div class="summary-content">
-                <p class="section-subtitle">OUR SERVICES</p>
-                <h2 class="section-title-dark">Everything You Need to Dominate Your Market</h2>
-                <p class="summary-intro">Our integrated approach ensures every aspect of your online presence works together seamlessly. From your website to your search rankings to your advertising, we create a cohesive strategy that drives consistent, measurable growth.</p>
-                
-                <div class="summary-grid">
-                    <div class="summary-card">
-                        <div class="summary-illustration">
-                            <img src="summary_website.png" alt="Website Design">
-                        </div>
-                        <h3>Website Design</h3>
-                        <p>Fast, professional, conversion-focused websites that represent your brand and drive action.</p>
-                        <a href="#web-design" class="summary-link">Learn More →</a>
-                    </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <span class="section-tag">Get Started</span>
+                    <h2 class="section-title">Ready to <span class="gradient-text">Grow Your Business?</span></h2>
+                    <p class="contact-description">Let's discuss how we can help you dominate your market online. Get in touch today for a free consultation.</p>
                     
-                    <div class="summary-card">
-                        <div class="summary-illustration">
-                            <img src="summary_seo.png" alt="SEO Services">
-                        </div>
-                        <h3>SEO</h3>
-                        <p>Strategic optimization to achieve and maintain top search rankings for your most valuable keywords.</p>
-                        <a href="#seo" class="summary-link">Learn More →</a>
-                    </div>
-                    
-                    <div class="summary-card">
-                        <div class="summary-illustration">
-                            <img src="summary_ads.png" alt="Google Ads">
-                        </div>
-                        <h3>Google Ads</h3>
-                        <p>Expertly managed campaigns that deliver qualified leads and maximize your advertising ROI.</p>
-                        <a href="#google-ads" class="summary-link">Learn More →</a>
-                    </div>
-                    
-                    <div class="summary-card">
-                        <div class="summary-illustration">
-                            <img src="summary_business.png" alt="Google Business">
-                        </div>
-                        <h3>Google Business</h3>
-                        <p>Local search optimization to capture customers searching for businesses in your area.</p>
-                        <a href="#google-business" class="summary-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <div class="summary-cta">
-                    <p>Ready to transform your online presence?</p>
-                    <a href="#contact" class="btn-primary btn-large">Start Your Growth Journey</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section (Continuous Auto-Scroll) -->
-    <section class="testimonials" id="testimonials">
-        <div class="container-full">
-            <div class="testimonials-header">
-                <p class="section-subtitle">CLIENT SUCCESS STORIES</p>
-                <h2 class="section-title">Real Businesses. Real Results.</h2>
-                <p class="testimonials-intro">Our clients come to us with challenges—low visibility, inefficient marketing, stagnant growth. Here's what happened when they partnered with Q8Block.</p>
-            </div>
-            
-            <div class="testimonial-carousel">
-                <div class="testimonial-track" id="testimonialTrack">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-slide active">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"We were struggling to get noticed online. Q8Block completely transformed our digital presence. Within three months, we were ranking on the first page for our key services, and our phone started ringing consistently. The quality of leads improved dramatically, and our business has grown significantly."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">AM</div>
-                                <div class="author-info">
-                                    <div class="author-name">Ahmed Mohammed</div>
-                                    <div class="author-title">Owner, Premium Auto Services</div>
-                                </div>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Call Us</span>
+                                <a href="tel:+96594139666" class="contact-value">+965 9413 9666</a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Before working with Q8Block, our Google Ads were a money pit. We were spending heavily but seeing minimal returns. Their team restructured everything—targeting, messaging, landing pages. Now our campaigns are profitable, and we're scaling our ad spend with confidence."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">SK</div>
-                                <div class="author-info">
-                                    <div class="author-name">Sara Al-Kandari</div>
-                                    <div class="author-title">Marketing Director, Gulf Tech Solutions</div>
-                                </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Visit Us</span>
+                                <span class="contact-value">Street 14, Mangaf, Ahmadi<br>Kuwait</span>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Our old website was slow and outdated. Q8Block built us a new site that's not only beautiful but also incredibly fast and easy to navigate. More importantly, it converts. We're seeing more inquiries and bookings than ever before. It's been a game-changer for our business."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">KA</div>
-                                <div class="author-info">
-                                    <div class="author-name">Khalid Al-Rashid</div>
-                                    <div class="author-title">CEO, Elite Consulting Group</div>
-                                </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Local search was completely untapped for us. Q8Block optimized our Google Business Profile and implemented a local SEO strategy. Now we dominate the 'near me' searches in our area. We've seen a massive increase in walk-ins and phone calls from customers who found us online."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">FH</div>
-                                <div class="author-info">
-                                    <div class="author-name">Fatima Al-Hajri</div>
-                                    <div class="author-title">Owner, Oasis Wellness Center</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 5 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"We needed a partner who understood both digital marketing and our industry. Q8Block delivered on both fronts. Their strategic approach to SEO and content has positioned us as a thought leader in our field. Our organic traffic has tripled, and we're closing more deals than ever."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">YS</div>
-                                <div class="author-info">
-                                    <div class="author-name">Yousef Al-Sabah</div>
-                                    <div class="author-title">Managing Partner, Horizon Legal Advisors</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 6 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"The transparency and communication from Q8Block have been outstanding. They don't just execute—they educate. We understand exactly what they're doing, why it works, and what results to expect. It's a true partnership, and the results speak for themselves."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">LM</div>
-                                <div class="author-info">
-                                    <div class="author-name">Layla Al-Mutawa</div>
-                                    <div class="author-title">Founder, Bloom Boutique</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 7 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"We were skeptical about SEO at first, but Q8Block's data-driven approach won us over. They showed us the opportunity, executed flawlessly, and delivered results ahead of schedule. We're now ranking #2 for our most competitive keyword, and the leads keep coming in."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">MA</div>
-                                <div class="author-info">
-                                    <div class="author-name">Mohammed Al-Ajmi</div>
-                                    <div class="author-title">Director, Skyline Properties</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 8 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Our e-commerce site was getting traffic but not sales. Q8Block analyzed the entire customer journey and made strategic improvements to our site design, product pages, and checkout process. Conversion rates doubled within the first month. Highly recommend their expertise."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">NA</div>
-                                <div class="author-info">
-                                    <div class="author-name">Noor Al-Anzi</div>
-                                    <div class="author-title">Owner, Urban Style Kuwait</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 9 -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="testimonial-text">"Working with Q8Block has been one of the best business decisions we've made. Their holistic approach—combining web development, SEO, and ads—created a powerful system that consistently brings in new customers. Our revenue has grown substantially, and we're expanding to a second location."</p>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">RA</div>
-                                <div class="author-info">
-                                    <div class="author-name">Rashed Al-Fahad</div>
-                                    <div class="author-title">Co-Founder, Fusion Fitness Studio</div>
-                                </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Working Hours</span>
+                                <span class="contact-value">Sun - Thu: 9AM - 6PM</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="cta" id="contact">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Be Found by Your Next Customer?</h2>
-                <p class="cta-description">Every day you remain invisible online, potential customers are choosing your competitors. Let's change that. Book a consultation, and we'll show you exactly how we'll make your business the obvious choice in your market. No pressure. Just a clear plan for growth.</p>
-                <div class="cta-buttons">
-                    <a href="mailto:info@q8block.com" class="btn-cta-primary btn-large">Schedule Your Consultation</a>
-                    <a href="tel:+96512345678" class="btn-cta-secondary btn-large">Call: +965 1234 5678</a>
-                </div>
-                <div class="cta-guarantee">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        <path d="M9 12l2 2 4-4"></path>
-                    </svg>
-                    <span>30-Day Satisfaction Guarantee</span>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+965 XXXX XXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="web">Website Design & Development</option>
+                                <option value="seo">Search Engine Optimization</option>
+                                <option value="ads">Google Ads Management</option>
+                                <option value="gmb">Google Business Profile</option>
+                                <option value="all">Full Digital Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-glow btn-full">
+                            Send Message
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -603,40 +568,32 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">Q8Block</h3>
-                    <p class="footer-tagline">Search Marketing Experts in Kuwait</p>
-                    <p class="footer-description">Helping businesses become discoverable, credible, and profitable online.</p>
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-text">Q8<span class="logo-highlight">Block</span></span>
+                    </a>
+                    <p class="footer-tagline">Online Presence That Actually Pays Off</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#web-design">Website Design</a></li>
-                        <li><a href="#seo">SEO</a></li>
-                        <li><a href="#google-ads">Google Ads</a></li>
-                        <li><a href="#google-business">Google Business</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul class="footer-contact">
-                        <li>Email: info@q8block.com</li>
-                        <li>Phone: +965 1234 5678</li>
-                        <li>Location: Kuwait City, Kuwait</li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="#services">Web Development</a>
+                        <a href="#services">SEO Services</a>
+                        <a href="#services">Google Ads</a>
+                        <a href="#services">Google Business</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#process">Our Process</a>
+                        <a href="#results">Results</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#contact">Contact</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Q8Block. All rights reserved.</p>
+                <p>&copy; 2024 Q8Block. All rights reserved.</p>
+                <p>Commercial Registration: 460497 | Kuwait</p>
             </div>
         </div>
     </footer>
@@ -644,4 +601,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
