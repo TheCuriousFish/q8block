@@ -142,11 +142,6 @@ ul {
     gap: var(--spacing-md);
 }
 
-.nav-logo img {
-    height: 50px;
-    width: auto;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -223,6 +218,28 @@ ul {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+}
+
+.hero-logo {
+    margin-bottom: var(--spacing-lg);
+    animation: fadeInDown 0.8s ease;
+}
+
+.hero-logo img {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-title {
