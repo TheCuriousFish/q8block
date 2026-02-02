@@ -392,9 +392,9 @@ ul {
 .portfolio-image {
     position: relative;
     width: 100%;
-    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+    padding-bottom: 100%; /* 1:1 aspect ratio for square cards */
     overflow: hidden;
-    background-color: var(--color-light-gray);
+    background-color: var(--color-white);
 }
 
 .portfolio-image img {
@@ -408,16 +408,17 @@ ul {
 }
 
 .portfolio-item:hover .portfolio-image img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .portfolio-title {
     padding: var(--spacing-md);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-secondary);
     text-align: center;
     transition: var(--transition);
+    display: none;
 }
 
 .portfolio-item:hover .portfolio-title {
