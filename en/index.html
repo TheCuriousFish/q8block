@@ -92,6 +92,15 @@
     <!-- Header / Navigation -->
     <header class="header">
         <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/en/" class="brand-link">
+                    <img src="/assets/images/logo-icon.png" alt="Q8Block" class="brand-icon">
+                    <div class="brand-text">
+                        <span class="brand-name">Q8BLOCK</span>
+                        <span class="brand-tagline">DIGITAL SOLUTIONS</span>
+                    </div>
+                </a>
+            </div>
             <div class="nav-links">
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#about" class="nav-link">About</a>
@@ -114,9 +123,6 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-logo">
-                    <img src="/assets/images/logo.png" alt="Kuwait Block" width="300" height="100">
-                </div>
                 <h1 class="hero-title">Get Your Business Found Locally and Turn Searches Into Calls</h1>
                 <div class="hero-description">
                     <p class="hero-intro">We build your local website foundation so your business:</p>
@@ -152,20 +158,32 @@
     <!-- Value Section -->
     <section class="value-section" id="about">
         <div class="container">
-            <div class="value-grid">
-                <div class="value-image">
-                    <picture>
-                        <source srcset="/assets/images/value-section.webp" type="image/webp">
-                        <img src="/assets/images/value-section.png" alt="Local Business Visibility - Kuwait Block" loading="lazy" width="800" height="450">
-                    </picture>
-                </div>
-                <div class="value-content">
-                    <h2 class="value-title">Stop Chasing Customers. Let Them Come To You.</h2>
-                    <p class="value-description">
-                        The most valuable asset for a local service business is not a logo or social media posts. It's a system that brings in people who are already searching for your service and ready to call. We build your online presence so customers find you first, trust you faster, and contact you without you spending your day chasing leads.
-                    </p>
-                    <a href="#services" class="btn btn-primary">Discover Our Services</a>
-                </div>
+            <div class="value-content-centered">
+                <h2 class="value-title-centered">Stop Chasing Customers. Let Them Come To You.</h2>
+                <ul class="value-points">
+                    <li class="value-point fade-in" data-delay="0">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Professional Branded Website</span>
+                    </li>
+                    <li class="value-point fade-in" data-delay="200">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Search Engine Optimized</span>
+                    </li>
+                    <li class="value-point fade-in" data-delay="400">
+                        <svg class="value-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Google Maps Integrated</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
