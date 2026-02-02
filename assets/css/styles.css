@@ -325,13 +325,17 @@ ul {
 /* Value Section */
 .value-section {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-whi.value-content-centered {
+    background-color: var(--color-white);
+}
+
+.value-content-centered {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
-.value-title-centered {ze: 2.5rem;
+.value-title-centered {
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-secondary);
     margin-bottom: var(--spacing-md);
