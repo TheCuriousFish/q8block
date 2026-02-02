@@ -1,0 +1,45 @@
+/* ===========================
+   Q8Block - English Stylesheet
+   Imports main styles and adds LTR-specific adjustments
+   =========================== */
+
+@import url('styles.css');
+
+/* LTR-specific overrides */
+html[dir="ltr"] .hero-benefits,
+html[dir="ltr"] .value-content {
+    text-align: left;
+}
+
+html[dir="ltr"] .benefit-item {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .benefit-item:hover {
+    transform: translateX(8px);
+}
+
+html[dir="ltr"] .nav-link::after {
+    right: auto;
+    left: 0;
+}
+
+html[dir="ltr"] .footer-list li {
+    text-align: left;
+}
+
+/* English typography adjustments */
+html[dir="ltr"] body {
+    letter-spacing: 0.01em;
+}
+
+html[dir="ltr"] .hero-title {
+    letter-spacing: -0.02em;
+}
+
+html[dir="ltr"] .section-title,
+html[dir="ltr"] .value-title,
+html[dir="ltr"] .consultation-title,
+html[dir="ltr"] .audit-title {
+    letter-spacing: -0.01em;
+}
