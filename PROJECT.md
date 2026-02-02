@@ -15,12 +15,12 @@
 ### Arabic
 **Name**: شركة كويت بلوك  
 **Phone**: 94139666  
-**Address**: محافظة الأحمدي، المنقف، قطعة 004، شارع 14، مبنى ناصر فالح شناز السبيعي، الدور الأول، محل 9
+**Address**: شارع 14، مبنى ناصر فالح شنار السبيعي، قطعة 004، قسيمة 54130، المنقف 00000
 
 ### English
 **Name**: Kuwait Block  
 **Phone**: 94139666  
-**Address**: Al Ahmadi Governorate, Mangaf, Block 004, Street 14, Nasser Falih Shnaz Al Subaie Building, Floor 1, Unit 9
+**Address**: Street 14, Nasser Faleh Shanar Al-Subaie Building, Block 004, Plot 54130, Mangaf 00000
 
 ## Brand Identity
 
