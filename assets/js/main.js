@@ -194,6 +194,24 @@
     `;
     document.head.appendChild(errorStyle);
 
+    // Scroll-triggered Fade-in Animation for Value Points
+    if ('IntersectionObserver' in window) {
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    }
+
     // Lazy Loading for Images
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
