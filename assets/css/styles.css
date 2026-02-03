@@ -969,18 +969,19 @@ ul {
 .google-rating-link {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
     background-color: var(--color-white);
-    border: 2px solid var(--color-light-gray);
+    border: 3px solid var(--color-light-gray);
     border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     transition: var(--transition);
     text-decoration: none;
+    min-width: 400px;
 }
 
 .google-rating-link:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
     border-color: var(--color-primary);
 }
@@ -989,29 +990,45 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .google-rating-content {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.google-rating-score {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.rating-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 1;
 }
 
 .google-stars {
     display: flex;
-    gap: 0.125rem;
+    gap: 0.25rem;
     color: #FBBC05;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .google-rating-text {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     color: var(--color-gray);
 }
 
-.google-rating-text strong {
+.review-count {
+    font-weight: 700;
     color: var(--color-secondary);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
 }
 
 /* Testimonials Grid */
@@ -1098,9 +1115,21 @@ ul {
         flex-direction: column;
         text-align: center;
         padding: var(--spacing-md);
+        min-width: auto;
+        width: 100%;
+        max-width: 400px;
     }
     
     .google-rating-content {
         align-items: center;
+    }
+    
+    .google-rating-score {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .rating-number {
+        font-size: 2rem;
     }
 }
