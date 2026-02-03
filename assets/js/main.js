@@ -210,6 +210,11 @@
         document.querySelectorAll('.fade-in').forEach(element => {
             fadeInObserver.observe(element);
         });
+
+        // Also observe service detail cards
+        document.querySelectorAll('.fade-in-on-scroll').forEach(element => {
+            fadeInObserver.observe(element);
+        });
     }
 
     // Lazy Loading for Images
