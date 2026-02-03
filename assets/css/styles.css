@@ -418,7 +418,6 @@ ul {
     color: var(--color-secondary);
     text-align: center;
     transition: var(--transition);
-    display: none;
 }
 
 .portfolio-item:hover .portfolio-title {
