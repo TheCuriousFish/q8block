@@ -778,14 +778,31 @@ ul {
     margin-bottom: var(--spacing-lg);
 }
 
-.footer-brand img {
+.footer-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
     margin-bottom: var(--spacing-sm);
-    filter: brightness(0) invert(1);
+}
+
+.footer-brand-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+}
+
+.footer-brand-subtitle {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    letter-spacing: 0.15em;
 }
 
 .footer-tagline {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
+    margin-top: var(--spacing-xs);
 }
 
 .footer-title {
