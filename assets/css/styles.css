@@ -1406,6 +1406,13 @@ ul {
     border-bottom: 2px solid var(--color-primary);
 }
 
+/* English page alignment */
+html[lang="en"] .comparison-table th:first-child,
+html[lang="en"] .comparison-table td:first-child,
+html[lang="en"] .comparison-table .category-row td {
+    text-align: left;
+}
+
 /* Responsive Design for Pricing */
 @media (max-width: 992px) {
     .pricing-cards {
