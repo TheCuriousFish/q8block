@@ -1289,12 +1289,12 @@ ul {
 /* CTA Buttons */
 .pricing-cta-button {
     width: 100%;
-    padding: var(--spacing-md);
+    padding: 0.875rem 2rem;
     background-color: var(--color-secondary);
     color: var(--color-white);
     border: none;
     border-radius: 50px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -1891,5 +1891,137 @@ html[lang="en"] .comparison-table .category-row td {
     
     .faq-item.active .faq-answer {
         padding: 0 var(--spacing-sm) var(--spacing-sm);
+    }
+}
+
+/* Service Overview Cards */
+.service-overview-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    gap: 2rem;
+    transition: var(--transition);
+}
+
+.service-overview-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.service-overview-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, rgba(171, 217, 231, 0.5) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+}
+
+.service-overview-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-overview-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin: 0;
+}
+
+.service-overview-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.service-overview-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.service-overview-features li {
+    font-size: 1rem;
+    color: var(--color-text);
+    padding-left: 1.75rem;
+    position: relative;
+}
+
+.service-overview-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.service-overview-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    margin-top: auto;
+}
+
+.service-overview-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.price-label {
+    font-size: 0.875rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.price-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .service-overview-card {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    
+    .service-overview-icon {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .service-overview-title {
+        font-size: 1.5rem;
+    }
+    
+    .service-overview-description {
+        font-size: 1rem;
+    }
+    
+    .service-overview-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-overview-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
 }
