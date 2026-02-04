@@ -967,68 +967,54 @@ ul {
 }
 
 .google-rating-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-lg) var(--spacing-xl);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
     background-color: var(--color-white);
-    border: 3px solid var(--color-light-gray);
+    border: 2px solid var(--color-light-gray);
     border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
     text-decoration: none;
-    min-width: 400px;
 }
 
 .google-rating-link:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
     border-color: var(--color-primary);
 }
 
 .google-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
 }
 
-.google-rating-content {
+.google-stars {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
-}
-
-.google-rating-score {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
+    gap: 0.125rem;
+    color: #FBBC05;
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 .rating-number {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-secondary);
     line-height: 1;
 }
 
-.google-stars {
-    display: flex;
-    gap: 0.25rem;
-    color: #FBBC05;
-    font-size: 1.5rem;
-}
-
-.google-rating-text {
-    font-size: 1.125rem;
+.rating-separator {
     color: var(--color-gray);
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 .review-count {
-    font-weight: 700;
-    color: var(--color-secondary);
-    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gray);
+    font-size: 1.125rem;
+    line-height: 1;
 }
 
 /* Testimonials Grid */
@@ -1112,24 +1098,21 @@ ul {
 
 @media (max-width: 768px) {
     .google-rating-link {
-        flex-direction: column;
-        text-align: center;
-        padding: var(--spacing-md);
-        min-width: auto;
-        width: 100%;
-        max-width: 400px;
-    }
-    
-    .google-rating-content {
-        align-items: center;
-    }
-    
-    .google-rating-score {
-        flex-direction: column;
         gap: 0.5rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .rating-number {
-        font-size: 2rem;
+        font-size: 1.25rem;
+    }
+    
+    .google-stars {
+        font-size: 1rem;
+    }
+    
+    .review-count {
+        font-size: 1rem;
     }
 }
