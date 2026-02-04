@@ -1,0 +1,17 @@
+# robots.txt for Q8Block
+# https://q8block.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private directories (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all CSS, JS, and image files for proper rendering
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Sitemap location
+Sitemap: https://q8block.com/sitemap.xml
