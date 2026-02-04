@@ -1145,7 +1145,7 @@ ul {
 .pricing-card {
     background-color: var(--color-white);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     display: flex;
@@ -1393,8 +1393,7 @@ ul {
 }
 
 .comparison-table .category-row {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
+    background-color: var(--color-light-gray);
     font-weight: 700;
     font-size: 1.125rem;
 }
@@ -1402,7 +1401,9 @@ ul {
 .comparison-table .category-row td {
     padding: var(--spacing-md);
     text-align: right;
-    border-top: 2px solid var(--color-primary);
+    color: var(--color-secondary);
+    border-top: 3px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
 }
 
 /* Responsive Design for Pricing */
