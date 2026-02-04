@@ -320,26 +320,7 @@
                         <span class="price-amount">120</span>
                         <span class="price-period">One-time</span>
                     </div>
-                    <div class="pricing-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>10 website pages</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>1 SEO blog post</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Custom design</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>100 directory citations</span>
-                        </div>
-                    </div>
                     <button class="pricing-cta-button" onclick="document.getElementById('consultation').scrollIntoView({behavior: 'smooth'})">Book Consultation</button>
-                    <button class="pricing-details-toggle" data-target="starter-details">View Full Details ↓</button>
                 </div>
 
                 <!-- Growth Package (Most Popular) -->
@@ -354,30 +335,7 @@
                         <span class="price-amount">250</span>
                         <span class="price-period">One-time</span>
                     </div>
-                    <div class="pricing-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>25 website pages</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>5 SEO blog posts</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Custom design</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>150 directory citations</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Structured data schema</span>
-                        </div>
-                    </div>
                     <button class="pricing-cta-button pricing-cta-featured" onclick="document.getElementById('consultation').scrollIntoView({behavior: 'smooth'})">Book Consultation</button>
-                    <button class="pricing-details-toggle" data-target="growth-details">View Full Details ↓</button>
                 </div>
 
                 <!-- Accelerator Package -->
@@ -391,145 +349,188 @@
                         <span class="price-amount">450</span>
                         <span class="price-period">One-time</span>
                     </div>
-                    <div class="pricing-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>50 website pages</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>20 SEO blog posts</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>Custom design</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>200 directory citations</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✓</span>
-                            <span>30 high-authority paid directories</span>
-                        </div>
-                    </div>
                     <button class="pricing-cta-button" onclick="document.getElementById('consultation').scrollIntoView({behavior: 'smooth'})">Book Consultation</button>
-                    <button class="pricing-details-toggle" data-target="accelerator-details">View Full Details ↓</button>
                 </div>
             </div>
 
-            <!-- Feature Comparison Tables (Collapsible) -->
-            <div class="pricing-details" id="starter-details" style="display: none;">
-                <h3 class="details-title">Starter - Full Details</h3>
+            <!-- Package Comparison Table -->
+            <div class="comparison-table-wrapper">
+                <h3 class="comparison-title">Package Comparison</h3>
                 
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Core Package Features</h4>
-                    <div class="feature-row"><span>Total website pages</span><span>10 pages</span></div>
-                    <div class="feature-row"><span>SEO blog posts</span><span>1 post</span></div>
-                    <div class="feature-row"><span>Custom branded website design</span><span>✔</span></div>
-                    <div class="feature-row"><span>Closed-loop internal linking system</span><span>✔</span></div>
-                    <div class="feature-row"><span>Google Business Profile setup</span><span>✔</span></div>
+                <!-- Core Features -->
+                <div class="comparison-section">
+                    <h4 class="comparison-section-title">Core Package Features</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter</th>
+                                <th class="featured-col">Growth</th>
+                                <th>Accelerator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total website pages (core + service pages combined)</td>
+                                <td>10 pages</td>
+                                <td class="featured-col">25 pages</td>
+                                <td>50 pages</td>
+                            </tr>
+                            <tr>
+                                <td>SEO blog posts</td>
+                                <td>1 post</td>
+                                <td class="featured-col">5 posts</td>
+                                <td>20 posts</td>
+                            </tr>
+                            <tr>
+                                <td>Custom branded website design</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Closed-loop internal linking system</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Google Business Profile setup</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="feature-table">
-                    <h4 class="feature-table-title">On-Page SEO</h4>
-                    <div class="feature-row"><span>Title tag optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Meta description optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Heading structure optimization (H1-H3)</span><span>✔</span></div>
-                    <div class="feature-row"><span>Image alt optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Internal anchor optimization</span><span>✔</span></div>
+                <!-- On-Page SEO -->
+                <div class="comparison-section">
+                    <h4 class="comparison-section-title">On-Page SEO</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter</th>
+                                <th class="featured-col">Growth</th>
+                                <th>Accelerator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title tag optimization</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Meta description optimization</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Heading structure optimization (H1–H3)</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Image alt optimization</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Internal anchor optimization</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Technical SEO</h4>
-                    <div class="feature-row"><span>XML sitemap setup</span><span>✔</span></div>
-                    <div class="feature-row"><span>Robots.txt configuration</span><span>✔</span></div>
-                    <div class="feature-row"><span>Core Web Vitals basic optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Search Console integration</span><span>✔</span></div>
-                    <div class="feature-row"><span>Clean URL structure</span><span>✔</span></div>
-                    <div class="feature-row"><span>Structured data schema implementation</span><span>—</span></div>
+                <!-- Technical SEO -->
+                <div class="comparison-section">
+                    <h4 class="comparison-section-title">Technical SEO</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter</th>
+                                <th class="featured-col">Growth</th>
+                                <th>Accelerator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XML sitemap setup</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Robots.txt configuration</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Core Web Vitals basic optimization</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Search Console integration</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Clean URL structure</td>
+                                <td><span class="check">✔</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>Structured data schema implementation</td>
+                                <td><span class="dash">—</span></td>
+                                <td class="featured-col"><span class="check">✔</span></td>
+                                <td><span class="check">✔</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Citations & Directories</h4>
-                    <div class="feature-row"><span>Standard directory citations</span><span>100</span></div>
-                    <div class="feature-row"><span>High-authority paid directories</span><span>10</span></div>
-                </div>
-            </div>
-
-            <div class="pricing-details" id="growth-details" style="display: none;">
-                <h3 class="details-title">Growth - Full Details</h3>
-                
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Core Package Features</h4>
-                    <div class="feature-row"><span>Total website pages</span><span>25 pages</span></div>
-                    <div class="feature-row"><span>SEO blog posts</span><span>5 posts</span></div>
-                    <div class="feature-row"><span>Custom branded website design</span><span>✔</span></div>
-                    <div class="feature-row"><span>Closed-loop internal linking system</span><span>✔</span></div>
-                    <div class="feature-row"><span>Google Business Profile setup</span><span>✔</span></div>
-                </div>
-
-                <div class="feature-table">
-                    <h4 class="feature-table-title">On-Page SEO</h4>
-                    <div class="feature-row"><span>Title tag optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Meta description optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Heading structure optimization (H1-H3)</span><span>✔</span></div>
-                    <div class="feature-row"><span>Image alt optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Internal anchor optimization</span><span>✔</span></div>
-                </div>
-
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Technical SEO</h4>
-                    <div class="feature-row"><span>XML sitemap setup</span><span>✔</span></div>
-                    <div class="feature-row"><span>Robots.txt configuration</span><span>✔</span></div>
-                    <div class="feature-row"><span>Core Web Vitals basic optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Search Console integration</span><span>✔</span></div>
-                    <div class="feature-row"><span>Clean URL structure</span><span>✔</span></div>
-                    <div class="feature-row"><span>Structured data schema implementation</span><span>✔</span></div>
-                </div>
-
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Citations & Directories</h4>
-                    <div class="feature-row"><span>Standard directory citations</span><span>150</span></div>
-                    <div class="feature-row"><span>High-authority paid directories</span><span>20</span></div>
-                </div>
-            </div>
-
-            <div class="pricing-details" id="accelerator-details" style="display: none;">
-                <h3 class="details-title">Accelerator - Full Details</h3>
-                
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Core Package Features</h4>
-                    <div class="feature-row"><span>Total website pages</span><span>50 pages</span></div>
-                    <div class="feature-row"><span>SEO blog posts</span><span>20 posts</span></div>
-                    <div class="feature-row"><span>Custom branded website design</span><span>✔</span></div>
-                    <div class="feature-row"><span>Closed-loop internal linking system</span><span>✔</span></div>
-                    <div class="feature-row"><span>Google Business Profile setup</span><span>✔</span></div>
-                </div>
-
-                <div class="feature-table">
-                    <h4 class="feature-table-title">On-Page SEO</h4>
-                    <div class="feature-row"><span>Title tag optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Meta description optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Heading structure optimization (H1-H3)</span><span>✔</span></div>
-                    <div class="feature-row"><span>Image alt optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Internal anchor optimization</span><span>✔</span></div>
-                </div>
-
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Technical SEO</h4>
-                    <div class="feature-row"><span>XML sitemap setup</span><span>✔</span></div>
-                    <div class="feature-row"><span>Robots.txt configuration</span><span>✔</span></div>
-                    <div class="feature-row"><span>Core Web Vitals basic optimization</span><span>✔</span></div>
-                    <div class="feature-row"><span>Search Console integration</span><span>✔</span></div>
-                    <div class="feature-row"><span>Clean URL structure</span><span>✔</span></div>
-                    <div class="feature-row"><span>Structured data schema implementation</span><span>✔</span></div>
-                </div>
-
-                <div class="feature-table">
-                    <h4 class="feature-table-title">Citations & Directories</h4>
-                    <div class="feature-row"><span>Standard directory citations</span><span>200</span></div>
-                    <div class="feature-row"><span>High-authority paid directories</span><span>30</span></div>
+                <!-- Off-Page SEO -->
+                <div class="comparison-section">
+                    <h4 class="comparison-section-title">Off-Page SEO</h4>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter</th>
+                                <th class="featured-col">Growth</th>
+                                <th>Accelerator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard directory citations</td>
+                                <td>100</td>
+                                <td class="featured-col">150</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>High-authority paid directories</td>
+                                <td>10</td>
+                                <td class="featured-col">20</td>
+                                <td>30</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

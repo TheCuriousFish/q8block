@@ -274,47 +274,6 @@
     setVH();
     window.addEventListener('resize', setVH);
 
-    // Pricing Details Toggle
-    const pricingToggles = document.querySelectorAll('.pricing-details-toggle');
-    
-    pricingToggles.forEach(toggle => {
-        toggle.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const detailsSection = document.getElementById(targetId);
-            
-            if (detailsSection) {
-                // Close all other details sections
-                document.querySelectorAll('.pricing-details').forEach(section => {
-                    if (section.id !== targetId && section.style.display === 'block') {
-                        section.style.display = 'none';
-                        // Reset button text for other toggles
-                        const otherToggle = document.querySelector(`[data-target="${section.id}"]`);
-                        if (otherToggle) {
-                            const isArabic = document.documentElement.lang === 'ar';
-                            otherToggle.textContent = isArabic ? 'عرض التفاصيل الكاملة ↓' : 'View Full Details ↓';
-                        }
-                    }
-                });
-                
-                // Toggle current section
-                const isHidden = detailsSection.style.display === 'none' || !detailsSection.style.display;
-                detailsSection.style.display = isHidden ? 'block' : 'none';
-                
-                // Update button text
-                const isArabic = document.documentElement.lang === 'ar';
-                if (isHidden) {
-                    this.textContent = isArabic ? 'إخفاء التفاصيل ↑' : 'Hide Details ↑';
-                    // Smooth scroll to details
-                    setTimeout(() => {
-                        detailsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 100);
-                } else {
-                    this.textContent = isArabic ? 'عرض التفاصيل الكاملة ↓' : 'View Full Details ↓';
-                }
-            }
-        });
-    });
-
     // Console Welcome Message
     console.log('%cQ8Block Digital Solutions', 'color: #0E2040; font-size: 24px; font-weight: bold;');
     console.log('%cWe help local businesses get found and grow!', 'color: #ABD9E7; font-size: 14px;');
