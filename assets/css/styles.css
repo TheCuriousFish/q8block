@@ -1299,6 +1299,7 @@ ul {
     cursor: pointer;
     transition: var(--transition);
     margin-top: auto;
+    white-space: nowrap;
 }
 
 .pricing-cta-button:hover {
