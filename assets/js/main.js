@@ -274,9 +274,32 @@
     setVH();
     window.addEventListener('resize', setVH);
 
+    // FAQ Accordion Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(faqItem => {
+                faqItem.classList.remove('active');
+                faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
     // Console Welcome Message
     console.log('%cQ8Block Digital Solutions', 'color: #0E2040; font-size: 24px; font-weight: bold;');
     console.log('%cWe help local businesses get found and grow!', 'color: #ABD9E7; font-size: 14px;');
-    console.log('%cPhone: 94139666', 'color: #6C757D; font-size: 12px;');
+    console.log('%cPhone: +965 9413 9666', 'color: #6C757D; font-size: 12px;');
 
 })();
