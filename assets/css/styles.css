@@ -1491,3 +1491,58 @@ html[lang="en"] .comparison-table .category-row td {
         font-size: 1.25rem;
     }
 }
+
+/* Footer Map & Directions */
+.footer-map {
+    grid-column: 1 / -1;
+    margin-top: var(--spacing-md);
+}
+
+.map-container {
+    margin-top: var(--spacing-sm);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+.footer-directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--spacing-sm);
+    padding: 12px 24px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-directions-btn:hover {
+    background-color: #9BCFDC;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(171, 217, 231, 0.3);
+}
+
+.footer-directions-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+@media (max-width: 768px) {
+    .footer-map {
+        margin-top: var(--spacing-lg);
+    }
+    
+    .footer-directions-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
