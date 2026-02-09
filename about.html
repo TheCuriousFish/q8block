@@ -187,7 +187,22 @@
     <!-- Our Approach -->
     <section class="value-section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center;">
+            <style>
+                @media (max-width: 768px) {
+                    .how-we-work-grid-ar {
+                        grid-template-columns: 1fr !important;
+                        gap: 2rem !important;
+                    }
+                    .how-we-work-icon-ar {
+                        width: 180px !important;
+                        height: 180px !important;
+                    }
+                    .how-we-work-title-ar {
+                        font-size: 1.5rem !important;
+                    }
+                }
+            </style>
+            <div class="how-we-work-grid-ar" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center;">
                 <div>
                     <div style="display: flex; gap: 2rem; margin-bottom: 2.5rem; align-items: start;">
                         <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--color-primary); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700;">01</div>
@@ -212,12 +227,12 @@
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <svg width="280" height="280" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary);">
+                    <svg class="how-we-work-icon-ar" width="280" height="280" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary);">
                         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="var(--color-primary)" fill-opacity="0.1"/>
                         <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <h2 class="value-title-centered" style="margin-top: 2rem; font-size: 2rem;">كيف نعمل</h2>
+                    <h2 class="value-title-centered how-we-work-title-ar" style="margin-top: 2rem; font-size: 2rem;">كيف نعمل</h2>
                     <p style="color: var(--color-text-secondary); margin-top: 1rem;">بسيط. لا عمليات معقدة.</p>
                 </div>
             </div>
@@ -233,17 +248,28 @@
                     نعمل مع شركات الخدمات المحلية في الكويت والسعودية والإمارات. إذا كنت تخدم العملاء في منطقتك وتريد المزيد منهم للعثور عليك عبر الإنترنت، يمكننا المساعدة.
                 </p>
                 <div class="services-grid" style="margin-top: 3rem;">
-                    <div class="service-card fade-in-on-scroll" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMjAzMyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iODAiIGZpbGw9IiMyNTZhZmYiIG9wYWNpdHk9IjAuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+8J+PqjwvdGV4dD48L3N2Zz4='); background-size: cover; background-position: center; color: white; border: none;">
-                        <h3 class="service-title" style="color: white;">شركات الخدمات</h3>
-                        <p class="service-description" style="color: rgba(255,255,255,0.9);">المطاعم والصالونات ومحلات الحلاقة والعيادات والورش والصالات الرياضية والمنتجعات الصحية والمزيد.</p>
+                    <div class="service-card fade-in-on-scroll" style="text-align: center;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1.5rem; color: var(--color-primary);">
+                            <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="service-title">شركات الخدمات</h3>
+                        <p class="service-description">المطاعم والصالونات ومحلات الحلاقة والعيادات والورش والصالات الرياضية والمنتجعات الصحية والمزيد.</p>
                     </div>
-                    <div class="service-card fade-in-on-scroll" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMjAzMyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iODAiIGZpbGw9IiMyNTZhZmYiIG9wYWNpdHk9IjAuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+8J+TjTwvdGV4dD48L3N2Zz4='); background-size: cover; background-position: center; color: white; border: none;">
-                        <h3 class="service-title" style="color: white;">التركيز المحلي</h3>
-                        <p class="service-description" style="color: rgba(255,255,255,0.9);">الشركات التي تخدم العملاء في مدينتهم أو منطقتهم، وليس التجارة الإلكترونية الدولية.</p>
+                    <div class="service-card fade-in-on-scroll" style="text-align: center;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1.5rem; color: var(--color-primary);">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="service-title">التركيز المحلي</h3>
+                        <p class="service-description">الشركات التي تخدم العملاء في مدينتهم أو منطقتهم، وليس التجارة الإلكترونية الدولية.</p>
                     </div>
-                    <div class="service-card fade-in-on-scroll" style="background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzFhMjAzMyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iODAiIGZpbGw9IiMyNTZhZmYiIG9wYWNpdHk9IjAuMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSI+8J+TiDwvdGV4dD48L3N2Zz4='); background-size: cover; background-position: center; color: white; border: none;">
-                        <h3 class="service-title" style="color: white;">مستعد للنمو</h3>
-                        <p class="service-description" style="color: rgba(255,255,255,0.9);">الشركات التي تريد المزيد من العملاء ومستعدة للاستثمار في وجودها على الإنترنت.</p>
+                    <div class="service-card fade-in-on-scroll" style="text-align: center;">
+                        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1.5rem; color: var(--color-primary);">
+                            <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="service-title">مستعد للنمو</h3>
+                        <p class="service-description">الشركات التي تريد المزيد من العملاء ومستعدة للاستثمار في وجودها على الإنترنت.</p>
                     </div>
                 </div>
             </div>
