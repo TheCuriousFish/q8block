@@ -5,7 +5,7 @@
   <!-- Arabic Homepage -->
   <url>
     <loc>https://q8block.com/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/"/>
@@ -16,7 +16,7 @@
   <!-- English Homepage -->
   <url>
     <loc>https://q8block.com/en/</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/"/>
@@ -24,10 +24,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://q8block.com/"/>
   </url>
   
+  <!-- Arabic About Page -->
+  <url>
+    <loc>https://q8block.com/about</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/about"/>
+  </url>
+  
+  <!-- English About Page -->
+  <url>
+    <loc>https://q8block.com/en/about</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/about"/>
+  </url>
+  
   <!-- Arabic Contact Page -->
   <url>
     <loc>https://q8block.com/contact</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/contact"/>
@@ -37,11 +57,91 @@
   <!-- English Contact Page -->
   <url>
     <loc>https://q8block.com/en/contact</loc>
-    <lastmod>2026-02-04</lastmod>
+    <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/contact"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/contact"/>
+  </url>
+  
+  <!-- Arabic Services Index -->
+  <url>
+    <loc>https://q8block.com/services/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/"/>
+  </url>
+  
+  <!-- English Services Index -->
+  <url>
+    <loc>https://q8block.com/en/services/</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/"/>
+  </url>
+  
+  <!-- Arabic Local SEO Service -->
+  <url>
+    <loc>https://q8block.com/services/local-seo</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/local-seo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/local-seo"/>
+  </url>
+  
+  <!-- English Local SEO Service -->
+  <url>
+    <loc>https://q8block.com/en/services/local-seo</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/local-seo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/local-seo"/>
+  </url>
+  
+  <!-- Arabic Google Ads Service -->
+  <url>
+    <loc>https://q8block.com/services/google-ads</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/google-ads"/>
+  </url>
+  
+  <!-- English Google Ads Service -->
+  <url>
+    <loc>https://q8block.com/en/services/google-ads</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/google-ads"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/google-ads"/>
+  </url>
+  
+  <!-- Arabic Local Website Development Service -->
+  <url>
+    <loc>https://q8block.com/services/local-website-development</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/local-website-development"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/local-website-development"/>
+  </url>
+  
+  <!-- English Local Website Development Service -->
+  <url>
+    <loc>https://q8block.com/en/services/local-website-development</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://q8block.com/services/local-website-development"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://q8block.com/en/services/local-website-development"/>
   </url>
   
 </urlset>
