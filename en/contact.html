@@ -187,8 +187,20 @@
                     </div>
                 </div>
                 
+                <!-- Hidden form for Netlify detection -->
+                <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                    <input type="text" name="name" />
+                    <input type="tel" name="phone" />
+                    <input type="email" name="email" />
+                    <input type="text" name="interest" />
+                    <input type="text" name="business" />
+                    <textarea name="message"></textarea>
+                    <input type="text" name="has-certificate" />
+                    <input type="text" name="business-category" />
+                </form>
+                
                 <!-- Contact Form (shown only if qualified) -->
-                <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
+                <form class="contact-form" id="contactForm" name="contact" method="POST" action="/en/contact?success=true" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
                     <!-- Honeypot for spam protection -->
                     <input type="hidden" name="bot-field" />
                     <input type="hidden" name="form-name" value="contact" />
@@ -310,6 +322,17 @@
             // Check for service parameter in URL and pre-select
             const urlParams = new URLSearchParams(window.location.search);
             const service = urlParams.get('service');
+            
+            // Auto-scroll to form section if coming from CTA
+            if (service) {
+                setTimeout(() => {
+                    const formSection = document.querySelector('.contact-form-section');
+                    if (formSection) {
+                        formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 300);
+            }
+            
             if (service && interestSelect) {
                 const serviceMap = {
                     'seo': 'local-seo',
