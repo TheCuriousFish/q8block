@@ -45,7 +45,7 @@
                 <a href="/en/contact" class="lang-switch">English</a>
             </div>
             <div class="nav-cta">
-                <a href="/#consultation" class="btn btn-primary">احجز استشارة مجانية</a>
+                <a href="/contact" class="btn btn-primary">احجز استشارة مجانية</a>
             </div>
         </nav>
     </header>
@@ -139,7 +139,64 @@
                 <h2 class="contact-form-title">أرسل لنا رسالة</h2>
                 <p class="contact-form-subtitle">املأ النموذج أدناه وسنتواصل معك في أقرب وقت ممكن</p>
                 
-                <form class="contact-form" id="contactForm">
+                <!-- Qualification Step -->
+                <div id="qualificationStep" class="form-step">
+                    <div class="qualification-intro">
+                        <h3>دعنا نتأكد من أننا مناسبون لك!</h3>
+                        <p>أجب على سؤالين سريعين للبدء:</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="qualification-label">هل لديك سجل تجاري؟</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="hasCertificate" value="yes" required>
+                                <span>نعم، لدي عمل مسجل</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="hasCertificate" value="no">
+                                <span>لا، أنا في بداية الطريق</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="qualification-label">ما نوع عملك؟</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="businessCategory" value="service" required>
+                                <span>عمل خدمي (صالونات، مطاعم، عيادات، ورش، إلخ)</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="businessCategory" value="ecommerce">
+                                <span>تجارة إلكترونية/متجر إلكتروني</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="qualifyBtn" class="btn btn-primary btn-large btn-block">متابعة</button>
+                </div>
+                
+                <!-- Not Qualified Message -->
+                <div id="notQualifiedMessage" class="form-step" style="display: none;">
+                    <div class="not-qualified-box">
+                        <h3>شكراً لاهتمامك!</h3>
+                        <p>في الوقت الحالي، نركز على الأعمال الخدمية المسجلة في الكويت والسعودية والإمارات.</p>
+                        <p>لا تتردد في التواصل معنا بمجرد حصولك على سجلك التجاري، وسنسعد بمساعدتك على النمو!</p>
+                        <a href="/" class="btn btn-secondary">العودة للرئيسية</a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form (shown only if qualified) -->
+                <form class="contact-form" id="contactForm" name="contact-ar" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display: none;">
+                    <!-- Honeypot for spam protection -->
+                    <input type="hidden" name="bot-field" />
+                    <input type="hidden" name="form-name" value="contact-ar" />
+                    
+                    <!-- Hidden qualification fields -->
+                    <input type="hidden" name="has-certificate" id="hiddenCertificate" />
+                    <input type="hidden" name="business-category" id="hiddenCategory" />
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">الاسم *</label>
@@ -157,6 +214,18 @@
                     </div>
                     
                     <div class="form-group">
+                        <label for="interest">ما الخدمة التي تهتم بها؟ *</label>
+                        <select id="interest" name="interest" required>
+                            <option value="">-- اختر خدمة --</option>
+                            <option value="main-package">الباقة الرئيسية (عرض الصفحة الرئيسية)</option>
+                            <option value="website-development">تطوير مواقع إلكترونية</option>
+                            <option value="local-seo">تحسين محركات البحث المحلي</option>
+                            <option value="google-ads">إدارة إعلانات Google</option>
+                            <option value="general">غير متأكد / استفسار عام</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
                         <label for="business">نوع العمل *</label>
                         <input type="text" id="business" name="business" placeholder="مثال: صالون حلاقة، مطعم، ورشة سيارات" required>
                     </div>
@@ -168,6 +237,15 @@
                     
                     <button type="submit" class="btn btn-primary btn-large btn-block">إرسال الرسالة</button>
                 </form>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="form-step" style="display: none;">
+                    <div class="success-box">
+                        <h3>✓ تم إرسال الرسالة بنجاح!</h3>
+                        <p>شكراً لتواصلك. سنرد عليك خلال 24 ساعة.</p>
+                        <a href="/" class="btn btn-primary">العودة للرئيسية</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -219,5 +297,80 @@
 
     <!-- JavaScript -->
     <script src="/assets/js/main.js"></script>
+    <script>
+        // Qualified Contact Form Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const qualifyBtn = document.getElementById('qualifyBtn');
+            const qualificationStep = document.getElementById('qualificationStep');
+            const notQualifiedMessage = document.getElementById('notQualifiedMessage');
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            const interestSelect = document.getElementById('interest');
+            
+            // Check for service parameter in URL and pre-select
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+            if (service && interestSelect) {
+                const serviceMap = {
+                    'seo': 'local-seo',
+                    'google-ads': 'google-ads',
+                    'website': 'website-development',
+                    'main': 'main-package'
+                };
+                const mappedService = serviceMap[service] || service;
+                interestSelect.value = mappedService;
+            }
+            
+            // Qualification logic
+            qualifyBtn.addEventListener('click', function() {
+                const hasCertificate = document.querySelector('input[name="hasCertificate"]:checked');
+                const businessCategory = document.querySelector('input[name="businessCategory"]:checked');
+                
+                if (!hasCertificate || !businessCategory) {
+                    alert('الرجاء الإجابة على كلا السؤالين للمتابعة.');
+                    return;
+                }
+                
+                // Store qualification data
+                document.getElementById('hiddenCertificate').value = hasCertificate.value;
+                document.getElementById('hiddenCategory').value = businessCategory.value;
+                
+                // Check if qualified
+                const isQualified = hasCertificate.value === 'yes' && businessCategory.value === 'service';
+                
+                // Hide qualification step
+                qualificationStep.style.display = 'none';
+                
+                if (isQualified) {
+                    // Show contact form
+                    contactForm.style.display = 'block';
+                } else {
+                    // Show not qualified message
+                    notQualifiedMessage.style.display = 'block';
+                }
+            });
+            
+            // Form submission handler
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Submit via Netlify Forms
+                const formData = new FormData(contactForm);
+                
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    contactForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                })
+                .catch((error) => {
+                    alert('عذراً، حدث خطأ في إرسال رسالتك. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
