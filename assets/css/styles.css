@@ -2250,3 +2250,212 @@ html[lang="en"] .comparison-table .category-row td {
         gap: 1.5rem;
     }
 }
+
+
+/* ===========================
+   Projects Showcase Page
+   =========================== */
+
+.page-hero {
+    padding: calc(var(--spacing-xl) + 3rem) 0 var(--spacing-xl);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    text-align: center;
+    color: var(--color-white);
+}
+
+.page-hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-white);
+}
+
+.page-hero-description {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.project-showcase {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-white);
+}
+
+.project-showcase:nth-child(even) {
+    background-color: var(--color-light);
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.project-showcase-reverse .project-content {
+    direction: ltr;
+}
+
+html[dir="rtl"] .project-showcase-reverse .project-content {
+    direction: ltr;
+}
+
+.project-image {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.project-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(14, 32, 64, 0.15);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+.project-details {
+    padding: var(--spacing-md);
+}
+
+html[dir="rtl"] .project-showcase-reverse .project-details {
+    text-align: right;
+}
+
+.project-category {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.project-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+}
+
+.project-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.project-service-tag {
+    padding: 0.5rem 1rem;
+    background-color: rgba(171, 217, 231, 0.2);
+    color: var(--color-secondary);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid var(--color-primary);
+}
+
+.cta-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    text-align: center;
+    color: var(--color-white);
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.cta-description {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.95;
+}
+
+/* Responsive Styles for Projects Page */
+@media (max-width: 992px) {
+    .page-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .project-showcase-reverse .project-content {
+        direction: rtl;
+    }
+    
+    html[dir="rtl"] .project-showcase-reverse .project-content {
+        direction: rtl;
+    }
+    
+    html[dir="rtl"] .project-showcase-reverse .project-details {
+        text-align: inherit;
+    }
+    
+    .project-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: calc(var(--spacing-lg) + 3rem) 0 var(--spacing-lg);
+    }
+    
+    .page-hero-title {
+        font-size: 2rem;
+    }
+    
+    .page-hero-description {
+        font-size: 1rem;
+    }
+    
+    .project-title {
+        font-size: 1.75rem;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+    }
+}
