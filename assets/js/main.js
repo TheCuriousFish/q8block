@@ -297,11 +297,11 @@
         });
     });
 
-     // Portfolio Carousel
+    // Portfolio Carousel with Infinite Loop
     const portfolioCarousel = document.querySelector('.portfolio-carousel');
     if (portfolioCarousel) {
         const track = portfolioCarousel.querySelector('.portfolio-track');
-        const slides = Array.from(track.querySelectorAll('.portfolio-slide'));
+        const originalSlides = Array.from(track.querySelectorAll('.portfolio-slide'));
         const prevBtn = document.querySelector('.carousel-prev');
         const nextBtn = document.querySelector('.carousel-next');
         const dotsContainer = document.querySelector('.carousel-dots');
@@ -309,15 +309,30 @@
         let currentIndex = 0;
         let slidesToShow = getSlidesToShow();
         let autoplayInterval;
+        let isTransitioning = false;
         
-        // Create dots
-        const totalDots = Math.ceil(slides.length / slidesToShow);
-        for (let i = 0; i < totalDots; i++) {
+        // Clone slides for infinite loop (clone 2 sets for smooth infinite scrolling)
+        const clonedSlidesStart = originalSlides.map(slide => slide.cloneNode(true));
+        const clonedSlidesEnd = originalSlides.map(slide => slide.cloneNode(true));
+        
+        // Add clones to track
+        clonedSlidesEnd.forEach(clone => track.appendChild(clone));
+        clonedSlidesStart.reverse().forEach(clone => track.insertBefore(clone, track.firstChild));
+        
+        // Get all slides including clones
+        const allSlides = Array.from(track.querySelectorAll('.portfolio-slide'));
+        const originalLength = originalSlides.length;
+        
+        // Start at the first original slide (after prepended clones)
+        currentIndex = originalLength;
+        
+        // Create dots (only for original slides)
+        for (let i = 0; i < originalLength; i++) {
             const dot = document.createElement('button');
             dot.classList.add('carousel-dot');
             dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
             if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i * slidesToShow));
+            dot.addEventListener('click', () => goToSlide(i));
             dotsContainer.appendChild(dot);
         }
         
@@ -329,49 +344,78 @@
             return 3;
         }
         
-        function updateCarousel() {
-            const slideWidth = slides[0].offsetWidth;
-            const gap = 32; // 2rem gap
-            const offset = currentIndex * (slideWidth + gap);
-            track.style.transform = `translateX(-${offset}px)`;
-            
-            // Update dots
-            const activeDotIndex = Math.floor(currentIndex / slidesToShow);
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === activeDotIndex);
-            });
-            
-            // Update button states
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
+        function getSlideWidth() {
+            return allSlides[0].offsetWidth;
         }
         
-        function goToSlide(index) {
-            currentIndex = Math.max(0, Math.min(index, slides.length - slidesToShow));
+        function getGap() {
+            return 32; // 2rem gap
+        }
+        
+        function updateCarousel(transition = true) {
+            const slideWidth = getSlideWidth();
+            const gap = getGap();
+            const offset = currentIndex * (slideWidth + gap);
+            
+            if (transition) {
+                track.style.transition = 'transform 0.5s ease';
+            } else {
+                track.style.transition = 'none';
+            }
+            
+            track.style.transform = `translateX(-${offset}px)`;
+            
+            // Update dots (map current index to original slide index)
+            const realIndex = ((currentIndex - originalLength) % originalLength + originalLength) % originalLength;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === realIndex);
+            });
+        }
+        
+        function goToSlide(realIndex) {
+            currentIndex = originalLength + realIndex;
             updateCarousel();
             resetAutoplay();
         }
         
         function nextSlide() {
-            if (currentIndex < slides.length - slidesToShow) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop back to start
-            }
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            currentIndex++;
             updateCarousel();
+            
+            // Check if we need to loop
+            setTimeout(() => {
+                if (currentIndex >= originalLength * 2) {
+                    // Jump back to first set of original slides
+                    currentIndex = originalLength;
+                    updateCarousel(false);
+                }
+                isTransitioning = false;
+            }, 500);
         }
         
         function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = slides.length - slidesToShow; // Loop to end
-            }
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            currentIndex--;
             updateCarousel();
+            
+            // Check if we need to loop
+            setTimeout(() => {
+                if (currentIndex < originalLength) {
+                    // Jump to last set of original slides
+                    currentIndex = originalLength * 2 - 1;
+                    updateCarousel(false);
+                }
+                isTransitioning = false;
+            }, 500);
         }
         
         function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+            autoplayInterval = setInterval(nextSlide, 4000);
         }
         
         function stopAutoplay() {
@@ -406,8 +450,7 @@
                 const newSlidesToShow = getSlidesToShow();
                 if (newSlidesToShow !== slidesToShow) {
                     slidesToShow = newSlidesToShow;
-                    currentIndex = 0;
-                    updateCarousel();
+                    updateCarousel(false);
                 }
             }, 250);
         });
@@ -437,7 +480,7 @@
         }
         
         // Initialize
-        updateCarousel();
+        updateCarousel(false);
         startAutoplay();
     }
 
