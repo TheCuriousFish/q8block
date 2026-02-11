@@ -367,14 +367,25 @@ ul {
     background-color: var(--color-white);
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
+.portfolio-carousel-container {
+    position: relative;
     margin-top: var(--spacing-lg);
+    padding: 0 3rem;
 }
 
-.portfolio-item {
+.portfolio-carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.portfolio-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-slide {
+    flex: 0 0 calc((100% - 4rem) / 3);
     position: relative;
     overflow: hidden;
     border-radius: var(--border-radius-lg);
@@ -385,9 +396,80 @@ ul {
     background-color: var(--color-white);
 }
 
-.portfolio-item:hover {
+.portfolio-slide:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background-color: var(--color-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:hover:not(:disabled) svg {
+    stroke: var(--color-white);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-btn svg {
+    stroke: var(--color-primary);
+    transition: var(--transition);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background-color: rgba(171, 217, 231, 0.5);
+}
+
+.carousel-dot.active {
+    background-color: var(--color-primary);
 }
 
 .portfolio-image {
@@ -881,9 +963,17 @@ ul {
         grid-template-columns: 1fr;
     }
     
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
+    .portfolio-slide {
+        flex: 0 0 calc((100% - 2rem) / 2);
+    }
+    
+    .portfolio-carousel-container {
+        padding: 0 2.5rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
     }
     
     .footer-grid {
@@ -929,8 +1019,22 @@ ul {
         font-size: 2rem;
     }
     
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .portfolio-slide {
+        flex: 0 0 100%;
+    }
+    
+    .portfolio-carousel-container {
+        padding: 0 2rem;
+    }
+    
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
     }
 }
 

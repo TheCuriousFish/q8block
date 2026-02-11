@@ -297,9 +297,152 @@
         });
     });
 
+     // Portfolio Carousel
+    const portfolioCarousel = document.querySelector('.portfolio-carousel');
+    if (portfolioCarousel) {
+        const track = portfolioCarousel.querySelector('.portfolio-track');
+        const slides = Array.from(track.querySelectorAll('.portfolio-slide'));
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        
+        let currentIndex = 0;
+        let slidesToShow = getSlidesToShow();
+        let autoplayInterval;
+        
+        // Create dots
+        const totalDots = Math.ceil(slides.length / slidesToShow);
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i * slidesToShow));
+            dotsContainer.appendChild(dot);
+        }
+        
+        const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
+        
+        function getSlidesToShow() {
+            if (window.innerWidth < 768) return 1;
+            if (window.innerWidth < 1024) return 2;
+            return 3;
+        }
+        
+        function updateCarousel() {
+            const slideWidth = slides[0].offsetWidth;
+            const gap = 32; // 2rem gap
+            const offset = currentIndex * (slideWidth + gap);
+            track.style.transform = `translateX(-${offset}px)`;
+            
+            // Update dots
+            const activeDotIndex = Math.floor(currentIndex / slidesToShow);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeDotIndex);
+            });
+            
+            // Update button states
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= slides.length - slidesToShow;
+        }
+        
+        function goToSlide(index) {
+            currentIndex = Math.max(0, Math.min(index, slides.length - slidesToShow));
+            updateCarousel();
+            resetAutoplay();
+        }
+        
+        function nextSlide() {
+            if (currentIndex < slides.length - slidesToShow) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to start
+            }
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slides.length - slidesToShow; // Loop to end
+            }
+            updateCarousel();
+        }
+        
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
+        }
+        
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+        
+        function resetAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+        
+        // Pause autoplay on hover
+        portfolioCarousel.addEventListener('mouseenter', stopAutoplay);
+        portfolioCarousel.addEventListener('mouseleave', startAutoplay);
+        
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newSlidesToShow = getSlidesToShow();
+                if (newSlidesToShow !== slidesToShow) {
+                    slidesToShow = newSlidesToShow;
+                    currentIndex = 0;
+                    updateCarousel();
+                }
+            }, 250);
+        });
+        
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoplay();
+        });
+        
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startAutoplay();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchStartX - touchEndX > swipeThreshold) {
+                nextSlide();
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                prevSlide();
+            }
+        }
+        
+        // Initialize
+        updateCarousel();
+        startAutoplay();
+    }
+
     // Console Welcome Message
     console.log('%cQ8Block Digital Solutions', 'color: #0E2040; font-size: 24px; font-weight: bold;');
     console.log('%cWe help local businesses get found and grow!', 'color: #ABD9E7; font-size: 14px;');
     console.log('%cPhone: +965 9413 9666', 'color: #6C757D; font-size: 12px;');
-
 })();
