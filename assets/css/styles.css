@@ -384,6 +384,15 @@ ul {
     transition: transform 0.5s ease;
 }
 
+/* Force LTR direction for carousel in RTL pages */
+html[dir="rtl"] .portfolio-carousel {
+    direction: ltr;
+}
+
+html[dir="rtl"] .portfolio-track {
+    direction: ltr;
+}
+
 .portfolio-slide {
     flex: 0 0 calc((100% - 4rem) / 3);
     position: relative;
