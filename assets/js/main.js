@@ -304,7 +304,6 @@
         const originalSlides = Array.from(track.querySelectorAll('.portfolio-slide'));
         const prevBtn = document.querySelector('.carousel-prev');
         const nextBtn = document.querySelector('.carousel-next');
-        const dotsContainer = document.querySelector('.carousel-dots');
         
         let currentIndex = 0;
         let slidesToShow = getSlidesToShow();
@@ -325,18 +324,6 @@
         
         // Start at the first original slide (after prepended clones)
         currentIndex = originalLength;
-        
-        // Create dots (only for original slides)
-        for (let i = 0; i < originalLength; i++) {
-            const dot = document.createElement('button');
-            dot.classList.add('carousel-dot');
-            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            dotsContainer.appendChild(dot);
-        }
-        
-        const dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
         
         function getSlidesToShow() {
             if (window.innerWidth < 768) return 1;
@@ -364,20 +351,9 @@
             }
             
             track.style.transform = `translateX(-${offset}px)`;
-            
-            // Update dots (map current index to original slide index)
-            const realIndex = ((currentIndex - originalLength) % originalLength + originalLength) % originalLength;
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === realIndex);
-            });
         }
         
-        function goToSlide(realIndex) {
-            currentIndex = originalLength + realIndex;
-            updateCarousel();
-            resetAutoplay();
-        }
-        
+
         function nextSlide() {
             if (isTransitioning) return;
             isTransitioning = true;
