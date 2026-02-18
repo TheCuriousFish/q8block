@@ -10,18 +10,47 @@
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const navCta = document.querySelector('.nav-cta');
-
+    const body = document.body;
+    
+    // Create overlay element
+    let navOverlay = document.querySelector('.nav-overlay');
+    if (!navOverlay && mobileMenuToggle) {
+        navOverlay = document.createElement('div');
+        navOverlay.className = 'nav-overlay';
+        body.appendChild(navOverlay);
+    }
+    
+    function toggleMobileMenu() {
+        mobileMenuToggle.classList.toggle('active');
+        if (navLinks) navLinks.classList.toggle('active');
+        if (navCta) navCta.classList.toggle('active');
+        if (navOverlay) navOverlay.classList.toggle('active');
+        body.style.overflow = mobileMenuToggle.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    function closeMobileMenu() {
+        mobileMenuToggle.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('active');
+        if (navCta) navCta.classList.remove('active');
+        if (navOverlay) navOverlay.classList.remove('active');
+        body.style.overflow = '';
+    }
+    
+    // Toggle menu on button click
     if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            
-            if (navLinks) {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            }
-            
-            if (navCta) {
-                navCta.style.display = navCta.style.display === 'flex' ? 'none' : 'flex';
-            }
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close menu on overlay click
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close menu on link click
+    if (navLinks) {
+        const links = navLinks.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 
